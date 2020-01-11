@@ -55,7 +55,7 @@ html, body{
 
 .first_clay {
  /*  transform: translate(var(--shift_x), var(--shift_y)) scale(var(--shift_s)); */
-   transform: translate(-4659.09090909090909px, -5804.54545454545454px) scale(4.545454545454545454);
+/*   transform: translate(-4659.09090909090909px, -5804.54545454545454px) scale(4.545454545454545454); */
 }
 
 .clay_zoomer{
