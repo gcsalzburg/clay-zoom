@@ -12,10 +12,15 @@ html, body{
    --pip_x: 1025px;
    --pip_y: 1277px;
    --pip_s: 0.22; /* scale */
-
+/*
    --shift_s: calc(1/var(--pip_s));
    --shift_x: calc(-1 * var(--pip_x) * var(--shift_s));
    --shift_y: calc(-1 * var(--pip_y) * var(--shift_s));
+*/
+   --shift_s: 4.545454545454545454;
+   --shift_x: -4659.09090909090909px;
+   --shift_y: -5804.54545454545454px;
+
  }
  
 .clay_wrapper, .clay{
