@@ -1,0 +1,58 @@
+html, body{
+   overflow: hidden;
+   width:100%;
+   height:100%;
+   margin:0;
+
+}
+
+/*
+Size of base shape:
+   w = 1667px
+   h = 2500px
+
+Size of frame:
+   w = 353px
+   h = 530px
+*/
+
+.clay{
+   width:1667px;
+   height:2500px;
+   position: relative;
+   transform-origin:center center;
+   z-index:10;
+}
+.clay:after{
+   position:absolute;
+   top:0;
+   left:0;
+   bottom:0;
+   right:0;
+   content:"";
+   background-image:url("clay_with_frame.png");
+   z-index:20;
+}
+
+.clay > .clay{
+   transform: translate(360px,290px) scale(22%);
+}
+
+.first_clay{
+   animation-duration: 2s;
+   animation-name: zoom_clay;
+   animation-timing-function: linear;
+   animation-iteration-count: infinite;
+   transform-origin:1203px 1543px;
+}
+
+@keyframes zoom_clay {
+   from {
+      transform: scale(2);
+   }
+
+   to {
+      transform: scale(4.54);
+   }
+}
+ 
