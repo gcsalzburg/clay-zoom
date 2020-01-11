@@ -36,13 +36,13 @@ section{
 }
 
 .clay > .clay{
-   transform: translate(1025px,1277px) scale(22%);
+   transform: translate(1025px,1277px) scale(0.22);
 }
 
 .first_clay {
    left: calc(-1025px * 4.545454545454);
    top: calc(-1277px * 4.545454545454);
-   transform: scale(454.5454545454%);
+   transform: scale(4.545454545454);
 }
 
 .clay_zoomer{
@@ -62,7 +62,7 @@ section{
       transform: scale(1);
    }
    to {
-      transform: scale(454.5454545454%);
+      transform: scale(4.545454545454);
    }
 }
 @keyframes position_clay {
