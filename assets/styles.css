@@ -31,6 +31,7 @@ html, body{
    width: 1667px;
    height: 2500px;
    transform-origin:left top;
+   z-index: 10;
 }
 .clay:after{
    position:absolute;
