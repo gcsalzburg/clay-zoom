@@ -5,23 +5,24 @@ html, body{
    margin:0;
 }
 
-main{
-   position: relative;
-   width: 1667px;
-   height: 2500px;
-   transform-origin:left top;
-}
-section{
-   position: absolute;
-   overflow: hidden;
-}
+:root {
+   --img_w: 1667px;
+   --img_h: 2500px;
 
-.clay{
-   width:1667px;
-   height:2500px;
+   --pip_x: 1025px;
+   --pip_y: 1277px;
+   --pip_s: 0.22; /* scale */
+
+   --shift_s: calc(1/var(--pip_s));
+   --shift_x: calc(-1 * var(--pip_x) * var(--shift_s));
+   --shift_y: calc(-1 * var(--pip_y) * var(--shift_s));
+ }
+ 
+.clay_wrapper, .clay{
    position: relative;
+   width: var(--img_w);
+   height: var(--img_h);
    transform-origin:left top;
-   z-index:10;
 }
 .clay:after{
    position:absolute;
@@ -36,44 +37,23 @@ section{
 }
 
 .clay > .clay{
-   transform: translate(1025px,1277px) scale(0.22);
+   transform: translate(var(--pip_x),var(--pip_y)) scale(var(--pip_s));
 }
 
 .first_clay {
-   left: calc(-1025px * 4.545454545454);
-   top: calc(-1277px * 4.545454545454);
-   transform: scale(4.545454545454);
+   transform: translate(var(--shift_x), var(--shift_y)) scale(var(--shift_s));
 }
 
 .clay_zoomer{
-   animation-name: scale_clay, position_clay;
-   animation-duration: 1s;
-   animation-timing-function: cubic-bezier(0.750, 0.315, 1.000, 1.000);  
-   animation-iteration-count: infinite;
-   animation-fill-mode: forwards;
+   animation: 1s cubic-bezier(0.750, 0.315, 1.000, 1.000) infinite zoom_clay;
    position:absolute;
    transform-origin:left top;
-   width: 1667px;
-   height: 2500px;
 }
-
-@keyframes scale_clay {
+@keyframes zoom_clay{
    from {
       transform: scale(1);
    }
    to {
-      transform: scale(4.545454545454);
+      transform: translate(var(--shift_x), var(--shift_y)) scale(var(--shift_s));
    }
 }
-@keyframes position_clay {
-   from {
-      left: 0;
-      top: 0;
-   }
-
-   to {
-      left: calc(-1025px * 4.545454545454);
-      top: calc(-1277px * 4.545454545454);
-   }
-}
- 
