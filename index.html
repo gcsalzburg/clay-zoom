@@ -40,13 +40,13 @@
          
          var img_w = 1667;
          var img_h = 2500;
-         var scale_w = w/img_w;
          var scale_h = h/img_h; 
-         var scale = Math.max(scale_w,scale_h);
-         var left_shift = (scale*img_w)-w; 
-         var top_shift = (scale*img_h)-h; 
 
-         document.getElementById("clay_wrapper").style.transform = "scale("+(Math.max(scale_w,scale_h)*100)+"%) translate(-"+left_shift+"px, -"+top_shift+"px)";
+         var left_shift = w-(scale_h*img_w); 
+         var top_shift = h-(scale_h*img_h); 
+
+         document.getElementById("clay_wrapper").style.transform = "scale("+scale_h*100+"%) translate("+left_shift+"px, "+top_shift+"px)";
+     
       }
    </script>
    
