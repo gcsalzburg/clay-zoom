@@ -43,7 +43,7 @@ html, body{
    bottom:0;
    right:0;
    content:"";
-   background-image:url("clay_with_frame.png");
+   background-image:url("clay_with_frame_2.png");
    z-index:20;
    background-size: cover;
 }
@@ -51,11 +51,6 @@ html, body{
 .clay > .clay{
 /*   transform: translate(var(--pip_x),var(--pip_y)) scale(var(--pip_s)); */
    transform: translate(1025px,1277px) scale(0.22);
-}
-
-.first_clay {
- /*  transform: translate(var(--shift_x), var(--shift_y)) scale(var(--shift_s)); */
-/*   transform: translate(-4659.09090909090909px, -5804.54545454545454px) scale(4.545454545454545454); */
 }
 
 .clay_zoomer{
