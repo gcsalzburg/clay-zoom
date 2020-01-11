@@ -56,7 +56,8 @@ html, body{
 }
 
 .clay_zoomer{
-   animation: 1s cubic-bezier(0.750, 0.315, 1.000, 1.000) infinite zoom_clay;
+   animation: 10s cubic-bezier(0.750, 0.315, 1.000, 1.000) infinite zoom_clay;
+   animation-direction: forwards;
    position:absolute;
    transform-origin:left top;
 }
