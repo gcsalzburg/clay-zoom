@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="assets/styles.css">
 	</head>
 	<body>
-      <main>
+      <main id="clay_wrapper">
          <div class="clay_zoomer">
             <div class="clay first_clay">
                <div class="clay"> 
@@ -25,5 +25,30 @@
             </div>
          </div>
       </main>
-	</body>
+
+   <script>
+      document.addEventListener('DOMContentLoaded', function(){
+         resize();
+      });
+      window.addEventListener('resize', function(event){
+         resize();
+      });
+
+      function resize(){
+         var w = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+	      var h = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+         
+         var img_w = 1667;
+         var img_h = 2500;
+         var scale_w = w/img_w;
+         var scale_h = h/img_h; 
+         var scale = Math.max(scale_w,scale_h);
+         var left_shift = (scale*img_w)-w; 
+         var top_shift = (scale*img_h)-h; 
+
+         document.getElementById("clay_wrapper").style.transform = "scale("+(Math.max(scale_w,scale_h)*100)+"%) translate(-"+left_shift+"px, -"+top_shift+"px)";
+      }
+   </script>
+   
+</body>
 </html>
